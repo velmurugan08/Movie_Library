@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies in {{ genre.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .genre-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        .movies-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .movie-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 200px;
+            text-align: center;
+        }
+        .movie-card img {
+            width: 100%;
+            height: auto;
+        }
+        .movie-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .movie-card p {
+            margin: 5px 0;
+            color: #666;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="genre-title">Movies in {{ genre.name }}</h1>
+        <div class="movies-list">
+            {% for movie in movies %}
+            <div class="movie-card">
+                <img src="{{ movie.poster_url }}" alt="{{ movie.title }} poster">
+                <h2>{{ movie.title }}</h2>
+                <p>{{ movie.year }}</p>
+                <p>IMDb Rating: {{ movie.imdb_rating }}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>
