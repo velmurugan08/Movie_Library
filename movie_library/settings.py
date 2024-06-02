@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-fbtmrt^ud5)^1o1fbmfq1j+$=)g8u-s%rk3sg1*b+9_7@qmu6(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1"]
+ALLOWED_HOSTS = ["movie-library-vhhq.onrender.com"]
 
 
 OMDBAPIKEY = config("OMDBAPIKEY")
