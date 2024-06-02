@@ -104,7 +104,7 @@
                 <button type="submit" class="btn btn-primary btn-block">Register</button>
             </form>
             <div class="login-link">
-                <p>Already have an account? <a href="//">Login</a></p>
+                <p>Already have an account? <a href="/">Login</a></p>
             </div>
         </div>
     </div>
@@ -135,7 +135,7 @@
                 if (resp.ok) {
                     const data = await resp.json();
                     if (data.success) {
-                        window.location.href = '/login';
+                        window.location.href = '/';
                     } else {
                         // Handle form errors with Toastr
                         for (let error in data.errors) {
