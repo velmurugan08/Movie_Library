@@ -62,7 +62,7 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="genre-title">Movies in {{ genre.name }}</h1>
+        <h1 class="genre-title">Movies in {{ genre.name}}</h1>
         <div class="movies-list">
             {% for movie in movies %}
             <div class="movie-card">
@@ -73,7 +73,7 @@
             </div>
             {% endfor %}
         </div>
-        <a href="/" class="back-link">Back to Home</a>
+        <a href="/movies" class="back-link">Back to Home</a>
     </div>
 </body>
 </html>

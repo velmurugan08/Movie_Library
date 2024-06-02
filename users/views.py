@@ -1,3 +1,4 @@
+import json
 from django.http import JsonResponse, HttpRequest
 from django.shortcuts import render, redirect
 from .forms import RegisterForm, LoginForm
@@ -56,16 +57,16 @@ def login(request: HttpRequest):
 
 # To post the register
 def register(request):
-    if request.method == "POST":
-        form = RegisterForm(request.POST)
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        form = RegisterForm(data)
         if form.is_valid():
             user = form.save(commit=False)
-            hashed_password = hash_pw(form.cleaned_data["password"])
-            user.set_password(hashed_password)
+            user.password = hash_pw(form.cleaned_data['password'])
             user.save()
-            return JsonResponse({"success": True})
+            return JsonResponse({'success': True})
         else:
-            return JsonResponse({"success": False, "errors": form.errors})
+            return JsonResponse({'success': False, 'errors': form.errors})
     else:
         form = RegisterForm()
-    return render(request, "users/register.html", {"form": form})
+        return render(request, 'users/register.html', {'form': form})
