@@ -129,4 +129,6 @@ def movies_by_genre(request, genre_id):
     genre = Genre.objects.filter(id=genre_id).first()
     movies = genre.movies.all()
     serializers = DisplayMoviesSerializers(movies, many=True)
-    return render(request, "movies/curr_genre.html", {"movies": serializers.data,"genre":genre})
+    return render(
+        request, "movies/curr_genre.html", {"movies": serializers.data, "genre": genre}
+    )
