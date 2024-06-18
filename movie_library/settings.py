@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     "users",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://movie-library-vhhq.onrender.com'
+]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
