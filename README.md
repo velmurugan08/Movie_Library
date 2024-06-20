@@ -66,13 +66,14 @@ Tech Stack Used
 * PostgreSQL: For database management.
 * HTML, CSS, and JavaScript: For front-end development.
 * Amazon AWS: For hosting the application and managing the database.
+* Onrender: The website is hosted in live using the onrender provider.
 
 Live Demo
 
 The application is hosted online. You can access it here.
 live link :
 
-    54.92.219.75:8000
+    https://movie-library-vhhq.onrender.com
 
 If you want to contribute to this project, please follow these steps:
 
